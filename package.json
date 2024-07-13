@@ -8,6 +8,7 @@
         "sponsorkit": "latest"
     },
     "dependencies": {
+        "sharp": "^0.33.4",
         "yarn": "^1.22.22"
     }
 }
