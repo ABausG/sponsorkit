@@ -8,6 +8,10 @@ export default defineConfig({
   formats: ["svg"],
   tiers: [
     {
+      title: "Backers",
+      preset: presets.none,
+    },
+    {
       title: "Bronze Sponsors",
       monthlyDollars: 5,
       preset: presets.base,
