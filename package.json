@@ -1,0 +1,13 @@
+{
+    "comment": "The package.json is used to configure sponsorkit and nothing else",
+    "private": true,
+    "scripts": {
+        "build": "sponsorkit"
+    },
+    "devDependencies": {
+        "sponsorkit": "latest"
+    },
+    "dependencies": {
+        "yarn": "^1.22.22"
+    }
+}

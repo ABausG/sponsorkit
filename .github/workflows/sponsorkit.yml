@@ -1,0 +1,41 @@
+name: Update sponsors in README
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+  push:
+    branches: [main]
+
+jobs:
+  update-sponsors:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16.x
+
+      - run: npm install yarn --global
+      - run: yarn
+
+      - name: Update sponsors
+        run: npm run build
+        env:
+          SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORS_TOKEN }}
+          SPONSORKIT_GITHUB_LOGIN: ABausG
+          SPONSORKIT_DIR: "./sponsorkit"
+
+      - run: ls
+      - run: ls sponsorkit
+
+      - name: Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "chore: update sponsors.svg"
+          add: "./sponsorkit/sponsors.*"
+          default_author: github_actions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
