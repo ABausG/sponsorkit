@@ -1,5 +1,4 @@
 {
-    "comment": "The package.json is used to configure sponsorkit and nothing else",
     "private": true,
     "scripts": {
         "build": "sponsorkit"
@@ -8,7 +7,6 @@
         "sponsorkit": "latest"
     },
     "dependencies": {
-        "sharp": "^0.33.4",
         "yarn": "^1.22.22"
     }
 }

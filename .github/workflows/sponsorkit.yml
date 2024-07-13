@@ -16,10 +16,9 @@ jobs:
       - name: Set node
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: lts/*
 
-      - run: npm install yarn --global
-      - run: yarn
+      - run: npm install
 
       - name: Update sponsors
         run: npm run build
